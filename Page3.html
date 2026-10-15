@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    
+    <!-- ios meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="My Cool App">
+
+    <title>Page 3</title>
+
+    <style>
+  
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; 
+            font-family: -apple-system, sans-serif;
+            
+            
+            background-image: url('page3.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            box-sizing: border-box;
+            overflow: hidden; 
+        }
+
+        /* This is for the bubble on iphone screens btw*/
+        main {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: calc(20px + env(safe-area-inset-bottom)); 
+        }
+
+        .glass-slider {
+            width: 80vw; 
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            
+            /* this is for liquid glass effect btw */
+
+            background: rgba(255, 255, 255, 0.1); 
+            border-radius: 50px; 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px);
+            
+            padding: 5px; 
+            box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.1), 
+                        0 10px 25px rgba(0, 0, 0, 0.25); 
+            
+            overflow: hidden;
+            position: relative;
+        }
+
+        .glass-btn {
+            display: block;
+            text-align: center;
+            padding: 16px 0;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1; 
+            
+            border-radius: 40px; 
+            transition: color 0.3s ease;
+        }
+
+        .glass-btn:active,
+        .glass-btn.active {
+            color: #007aff; 
+        }
+
+        .liquid-fill {
+            position: absolute;
+            top: 5px; 
+            bottom: 5px;
+            left: 5px;
+            
+            width: calc(100% / 3 - 5px); 
+            
+            border-radius: 40px; 
+            
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+            
+            box-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.5),
+                        inset 0 -3px 5px rgba(0, 0, 0, 0.1),
+                        0 5px 15px rgba(255, 255, 255, 0.3); 
+            
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            will-change: transform; 
+            -webkit-transform-origin: center center;
+        }
+
+        #btn-1:active ~ .liquid-fill { transform: translateX(0); } 
+        #btn-2:active ~ .liquid-fill { transform: translateX(100%); } 
+        #btn-3:active ~ .liquid-fill { transform: translateX(200%); } 
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="glass-slider">
+            <a href="page1.html" class="glass-btn" id="btn-1">Page 1</a>
+            <a href="page2.html" class="glass-btn" id="btn-2">Page 2</a>
+            <a href="index.html" class="glass-btn" id="btn-3">Home</a>
+            
+            <div class="liquid-fill"></div>
+        </div>
+    </main>
+
+</body>
+</html>

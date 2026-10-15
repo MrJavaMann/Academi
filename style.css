@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  gap: 12px;
+}
+
+a {
+  background: #cbe4ff;
+  color: #174f8c;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+}
